@@ -1,4 +1,4 @@
-import { Home, Package, DollarSign, ShoppingCart, Menu } from "lucide-react";
+import { Home, Package, DollarSign, ShoppingCart, Menu, Box, TruckIcon, Users } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -6,10 +6,13 @@ export const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const menuItems = [
-    { icon: Home, label: "Dashboard", path: "/" },
-    { icon: Package, label: "Inventory", path: "/inventory" },
-    { icon: DollarSign, label: "Expenses", path: "/expenses" },
-    { icon: ShoppingCart, label: "Sales", path: "/sales" },
+    { icon: Home, label: "ڈیش بورڈ", path: "/" },
+    { icon: Package, label: "انوینٹری", path: "/inventory" },
+    { icon: DollarSign, label: "اخراجات", path: "/expenses" },
+    { icon: ShoppingCart, label: "سیلز", path: "/sales" },
+    { icon: Box, label: "پیکیجنگ", path: "/packaging" },
+    { icon: TruckIcon, label: "ڈلیوری", path: "/delivery" },
+    { icon: Users, label: "ری سیلرز", path: "/resellers" },
   ];
 
   return (
