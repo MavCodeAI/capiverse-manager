@@ -14,7 +14,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
-import { PlusCircle, Edit2, Trash2 } from "lucide-react";
+import { PlusCircle, Edit2, Trash2, MoreVertical } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 interface Reseller {
   id: number;
@@ -82,6 +88,22 @@ const Resellers = () => {
     toast({
       title: t("success"),
       description: t("resellerDeleted"),
+    });
+  };
+
+  const handleEditReseller = (reseller: Reseller) => {
+    // Implement edit functionality
+    toast({
+      title: t("info"),
+      description: t("editingReseller"),
+    });
+  };
+
+  const handleViewDetails = (reseller: Reseller) => {
+    // Implement view details functionality
+    toast({
+      title: t("info"),
+      description: t("viewingDetails"),
     });
   };
 
@@ -157,7 +179,7 @@ const Resellers = () => {
                 <TableHead>{t("resellerName")}</TableHead>
                 <TableHead>{t("contact")}</TableHead>
                 <TableHead>{t("commission")}</TableHead>
-                <TableHead>{t("totalSales")}</TableHead>
+                <TableHead>{t("resellerSales")}</TableHead>
                 <TableHead>{t("actions")}</TableHead>
               </TableRow>
             </TableHeader>
@@ -169,18 +191,27 @@ const Resellers = () => {
                   <TableCell>{reseller.commission}%</TableCell>
                   <TableCell>Rs. {reseller.totalSales.toLocaleString()}</TableCell>
                   <TableCell>
-                    <div className="flex gap-2">
-                      <Button variant="outline" size="icon">
-                        <Edit2 className="h-4 w-4" />
-                      </Button>
-                      <Button
-                        variant="destructive"
-                        size="icon"
-                        onClick={() => handleDeleteReseller(reseller.id)}
-                      >
-                        <Trash2 className="h-4 w-4" />
-                      </Button>
-                    </div>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button variant="ghost" size="icon">
+                          <MoreVertical className="h-4 w-4" />
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="end" className="w-[160px]">
+                        <DropdownMenuItem onClick={() => handleViewDetails(reseller)}>
+                          {t("viewDetails")}
+                        </DropdownMenuItem>
+                        <DropdownMenuItem onClick={() => handleEditReseller(reseller)}>
+                          {t("edit")}
+                        </DropdownMenuItem>
+                        <DropdownMenuItem
+                          className="text-red-600"
+                          onClick={() => handleDeleteReseller(reseller.id)}
+                        >
+                          {t("delete")}
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
                   </TableCell>
                 </TableRow>
               ))}
