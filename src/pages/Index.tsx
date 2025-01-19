@@ -2,32 +2,35 @@ import { Card } from "@/components/ui/card";
 import { Sidebar } from "@/components/Sidebar";
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table";
 import { BarChart, DollarSign, Package, ShoppingCart, TrendingDown, TrendingUp } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
+  const { t } = useLanguage();
+
   const stats = [
     {
-      title: "Total Sales",
+      title: t("totalSales"),
       value: "PKR 125,000",
       icon: ShoppingCart,
       change: "+12.5%",
       trend: "up",
     },
     {
-      title: "Inventory Items",
+      title: t("inventoryItems"),
       value: "342",
       icon: Package,
       change: "-2.3%",
       trend: "down",
     },
     {
-      title: "Monthly Revenue",
+      title: t("monthlyRevenue"),
       value: "PKR 45,000",
       icon: DollarSign,
       change: "+8.1%",
       trend: "up",
     },
     {
-      title: "Active Orders",
+      title: t("activeOrders"),
       value: "12",
       icon: BarChart,
       change: "+3.2%",
@@ -52,8 +55,8 @@ const Index = () => {
       <Sidebar />
       <main className="flex-1 p-8">
         <div className="mb-8">
-          <h1 className="text-2xl font-bold text-gray-900">ڈیش بورڈ</h1>
-          <p className="text-gray-600">iCap Manager میں خوش آمدید</p>
+          <h1 className="text-2xl font-bold text-gray-900">{t("dashboard")}</h1>
+          <p className="text-gray-600">{t("welcome")}</p>
         </div>
         
         <div className="grid grid-cols-1 gap-6 mb-8 md:grid-cols-2 lg:grid-cols-4">
@@ -80,15 +83,15 @@ const Index = () => {
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           <Card className="p-6">
-            <h3 className="mb-4 text-lg font-medium">حالیہ آرڈرز</h3>
+            <h3 className="mb-4 text-lg font-medium">{t("recentOrders")}</h3>
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>آرڈر ID</TableHead>
-                  <TableHead>کسٹمر</TableHead>
-                  <TableHead>پروڈکٹ</TableHead>
-                  <TableHead>رقم</TableHead>
-                  <TableHead>سٹیٹس</TableHead>
+                  <TableHead>{t("orderID")}</TableHead>
+                  <TableHead>{t("customer")}</TableHead>
+                  <TableHead>{t("product")}</TableHead>
+                  <TableHead>{t("amount")}</TableHead>
+                  <TableHead>{t("status")}</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -116,14 +119,14 @@ const Index = () => {
           </Card>
           
           <Card className="p-6">
-            <h3 className="mb-4 text-lg font-medium">کم اسٹاک آئٹمز</h3>
+            <h3 className="mb-4 text-lg font-medium">{t("lowStockItems")}</h3>
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>پروڈکٹ ID</TableHead>
-                  <TableHead>نام</TableHead>
-                  <TableHead>موجودہ اسٹاک</TableHead>
-                  <TableHead>ری آرڈر پوائنٹ</TableHead>
+                  <TableHead>{t("orderID")}</TableHead>
+                  <TableHead>{t("itemName")}</TableHead>
+                  <TableHead>{t("stock")}</TableHead>
+                  <TableHead>{t("reorderPoint")}</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
