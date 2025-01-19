@@ -62,9 +62,24 @@ const translations = {
     
     // Resellers
     "resellers": "Resellers",
+    "resellersList": "Resellers List",
+    "addReseller": "Add Reseller",
+    "addNewReseller": "Add New Reseller",
     "resellerName": "Reseller Name",
     "contact": "Contact",
     "commission": "Commission",
+    "totalSales": "Total Sales",
+    "actions": "Actions",
+    "add": "Add",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "success": "Success",
+    "error": "Error",
+    "resellerAdded": "Reseller added successfully",
+    "resellerDeleted": "Reseller deleted successfully",
+    "fillAllFields": "Please fill all fields",
+    "managementSystem": "Reseller Management System",
   },
   ur: {
     // Dashboard
@@ -119,9 +134,24 @@ const translations = {
     
     // Resellers
     "resellers": "ری سیلرز",
+    "resellersList": "ری سیلرز کی فہرست",
+    "addReseller": "ری سیلر شامل کریں",
+    "addNewReseller": "نیا ری سیلر شامل کریں",
     "resellerName": "ری سیلر کا نام",
     "contact": "رابطہ",
     "commission": "کمیشن",
+    "totalSales": "کل فروخت",
+    "actions": "ایکشنز",
+    "add": "شامل کریں",
+    "cancel": "منسوخ کریں",
+    "edit": "ترمیم کریں",
+    "delete": "حذف کریں",
+    "success": "کامیابی",
+    "error": "خرابی",
+    "resellerAdded": "ری سیلر کامیابی سے شامل کر دیا گیا",
+    "resellerDeleted": "ری سیلر کامیابی سے حذف کر دیا گیا",
+    "fillAllFields": "براہ کرم تمام فیلڈز پُر کریں",
+    "managementSystem": "ری سیلر مینجمنٹ سسٹم",
   }
 };
 
